@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Content Area -->
+        <div class="main-layout">
+            <!-- Sidebar / Playlist -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2><i class="fas fa-music"></i> Library</h2>
+                </div>
+                <div class="playlist-container">
+                    <ul id="playlist" class="playlist">
+                        <!-- Playlist items will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main View / Now Playing Large -->
+            <main class="main-content">
+                <div class="background-gradient" id="bg-gradient"></div>
+                <div class="now-playing-large">
+                    <div class="cover-art-large">
+                        <img id="main-cover" src="" alt="Album Cover">
+                    </div>
+                    <div class="track-details-large">
+                        <h1 id="main-title">Select a track</h1>
+                        <p id="main-artist">Artist</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Bottom Player Bar -->
+        <footer class="player-bar">
+            <!-- Left: Small Track Info -->
+            <div class="player-left">
+                <img id="bar-cover" src="" alt="Cover" class="hidden">
+                <div class="track-info">
+                    <span id="bar-title" class="title"></span>
+                    <span id="bar-artist" class="artist"></span>
+                </div>
+            </div>
+
+            <!-- Center: Controls & Progress -->
+            <div class="player-center">
+                <div class="control-buttons">
+                    <button id="shuffle-btn" class="control-btn secondary" title="Shuffle"><i class="fas fa-random"></i></button>
+                    <button id="prev-btn" class="control-btn"><i class="fas fa-step-backward"></i></button>
+                    <button id="play-pause-btn" class="control-btn play-btn"><i class="fas fa-play-circle"></i></button>
+                    <button id="next-btn" class="control-btn"><i class="fas fa-step-forward"></i></button>
+                    <button id="repeat-btn" class="control-btn secondary" title="Repeat"><i class="fas fa-redo"></i></button>
+                </div>
+                <div class="progress-area">
+                    <span id="current-time">0:00</span>
+                    <div class="progress-wrapper" id="progress-wrapper">
+                        <div class="progress-bar" id="progress"></div>
+                    </div>
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
+
+            <!-- Right: Volume -->
+            <div class="player-right">
+                <i class="fas fa-volume-up" id="volume-icon"></i>
+                <div class="volume-wrapper" id="volume-wrapper">
+                    <div class="volume-bar" id="volume"></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <audio id="audio" src=""></audio>
+    <script src="script.js"></script>
+</body>
+</html>
